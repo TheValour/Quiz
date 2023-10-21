@@ -1,17 +1,19 @@
 import React from 'react';
-import Navbar from './component/navbar/Navbar';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 import './App.css';
-import Hero from './component/heroSection/Hero';
-import Quizes from './component/quizSection/Quizes';
-import Footer from './component/footer/Footer';
+import Home from './component/Home'
+import QuestionView from './component/question/QuestionView';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Hero/>
-      <Quizes/>
-      <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/quiz' element={<QuestionView/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
